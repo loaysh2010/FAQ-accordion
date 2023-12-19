@@ -1,0 +1,125 @@
+:root {
+  --Lightpink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+  --hover-color-active:#B72AF2;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 16px;
+}
+body{
+    font-family: 'Work Sans', sans-serif;
+    height: 100vh;
+    background-color: var(--Lightpink);
+}
+/* ===============================*/
+main{
+    max-width:1440px;
+    height: 100%;
+    margin: 0 auto;
+    background-image: url(imgs/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main article {
+    width:600px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    padding-bottom: 0;
+}
+/* ------------------------------- */ 
+main article > header{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+main article header h1{
+    font-weight: 700;
+    font-size: 3.5rem;
+    color: var(--Dark-purple);
+}
+/* ------------------------------------*/ 
+main article .questions .quest {
+    padding: 20px 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+main article .questions .quest:not(:last-child){
+border-bottom: 1px solid var(--Lightpink);
+
+}
+
+main article .questions .quest header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+main article .questions .quest.active header{
+    margin-bottom: 30px;
+}
+main article .questions .quest header h3{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+main article .questions .quest header i{
+    font-size: 24px;
+}
+main article .questions .quest p{
+    height: 0;
+    transform: translateY(20px);
+    transition: 0.3s;
+}
+i.bxs-minus-circle{
+    color: var(--Dark-purple);
+}
+main article .questions .quest.active p{
+    height: fit-content;
+    transform: translateY(0);
+}
+main article .questions .quest header:hover h3,
+ i.bxs-plus-circle{
+    color:  var(--hover-color-active);
+}
+/* =================================== */
+@media (max-width:576px){
+    main{
+        max-width: 100%;
+    }
+    main article{
+        max-width:90%;
+    }
+}
+@media (max-width:375px){
+    main{
+        background-image: url(imgs/background-pattern-mobile.svg);
+        max-width:100%;
+    }
+    main article{
+        max-width:90% ;
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    main article > header{
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    main article header img{
+        width: 24px;
+    }
+    main article header h1{
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--Dark-purple);
+    }
+}
